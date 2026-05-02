@@ -1,0 +1,51 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 222 47% 6%;
+    --foreground: 210 40% 98%;
+    --card: 222 40% 10%;
+    --card-foreground: 210 40% 98%;
+    --primary: 187 95% 48%;
+    --primary-foreground: 222 47% 6%;
+    --secondary: 222 30% 16%;
+    --secondary-foreground: 210 40% 96%;
+    --muted: 222 25% 18%;
+    --muted-foreground: 215 20% 70%;
+    --accent: 262 83% 58%;
+    --accent-foreground: 210 40% 98%;
+    --border: 222 25% 20%;
+    --input: 222 25% 20%;
+    --ring: 187 95% 48%;
+    --radius: 0.75rem;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-family: Inter, system-ui, sans-serif;
+  }
+  .ai-response {
+    line-height: 1.6;
+  }
+  
+  .ai-response ul {
+    padding-left: 20px;
+    margin-top: 6px;
+  }
+  
+  .ai-response li {
+    margin-bottom: 6px;
+  }
+  
+  .ai-response strong {
+    color: white;
+  }
+}
