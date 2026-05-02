@@ -45,8 +45,9 @@ def _init_firebase() -> bool:
                 # Project ID only — limited; still allows emulator-style or future extension
                 firebase_admin.initialize_app(options={"projectId": data.get("projectId", "votewise-local")})
         else:
-            _db = None
-            return False
+            # Cloud Run fallback (uses default service account)
+            cred = credentials.ApplicationDefault()
+            firebase_admin.initialize_app(cred)
         _db = firestore.client()
         return True
     except Exception:

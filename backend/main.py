@@ -16,9 +16,11 @@ load_dotenv()
 
 @asynccontextmanager
 async def lifespan(_: FastAPI):
-    firestore_service._init_firebase()
+    try:
+        firestore_service._init_firebase()
+    except Exception as e:
+        print("Firebase init failed:", e)
     yield
-
 
 app = FastAPI(
     title="VoteWise AI API",
@@ -43,6 +45,12 @@ app.include_router(simulation.router)
 app.include_router(content.router)
 
 
+
+@app.get("/")
+def root():
+    return {"message": "API is running"}
+
+
 @app.get("/health", response_model=HealthResponse)
 async def health() -> HealthResponse:
     return HealthResponse(
@@ -53,3 +61,4 @@ async def health() -> HealthResponse:
             "gemini": "enabled" if os.getenv("GEMINI_API_KEY", "").strip() else "disabled",
         },
     )
+

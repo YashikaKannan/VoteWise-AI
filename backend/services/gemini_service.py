@@ -25,7 +25,7 @@ print("NEW GEMINI CODE RUNNING")
 
 
 print("USING NEW GENAI SDK")
-from google import genai
+import google.generativeai as genai
 import os
 
 def generate_reply(message, profile=None, history=None, eli5=False):
@@ -34,7 +34,7 @@ def generate_reply(message, profile=None, history=None, eli5=False):
     if not key:
         return "Missing API key", False
 
-    client = genai.Client(api_key=key)
+    genai.configure(api_key=key)
 
     # prompt = f"Explain simply: {message}" if eli5 else message
     # prompt = f"""
@@ -79,11 +79,8 @@ def generate_reply(message, profile=None, history=None, eli5=False):
 
 
     try:
-        response = client.models.generate_content(
-            model="gemini-2.5-flash-lite",  
-            contents=prompt
-        )
-
+        model = genai.GenerativeModel("gemini-2.5-flash-lite")
+        response = model.generate_content(prompt)
         return response.text, False
 
     except Exception as e:
