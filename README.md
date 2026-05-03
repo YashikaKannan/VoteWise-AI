@@ -1,5 +1,8 @@
 # VoteWise AI – Intelligent Election Companion
 
+## Live Demo
+https://votewise-ai-pro.vercel.app
+
 ## 1. Problem Statement
 
 Voting in India involves registration, roll verification, polling-booth logistics, and understanding EVM/VVPAT procedures. First-time voters, NRIs, and people who have moved cities often face fragmented information and anxiety on polling day. A plain chatbot dumps facts without structure; users need **guided flow**, **personalized rules**, and **safe practice** before they vote.
@@ -53,7 +56,7 @@ flowchart LR
 | Layer | Stack |
 |--------|--------|
 | Frontend | React 18, Vite 6, TypeScript, Tailwind CSS, Radix/shadcn-style UI, framer-motion, react-router-dom, @react-google-maps/api |
-| Backend | FastAPI, Uvicorn, Pydantic v2, google-generativeai, firebase-admin, google-cloud-translate |
+| Backend | FastAPI, Uvicorn, Pydantic v2, Google Gemini API (via google-generativeai SDK), firebase-admin, google-cloud-translate |
 | Data / APIs | Firestore (optional), Gemini, Google Translate, Maps JavaScript API (frontend key) |
 
 ## 6. Setup Instructions
@@ -124,6 +127,68 @@ A sample `backend/Dockerfile` runs Uvicorn on port **8080**. Deploy with your se
 5. **Readiness** — timeline + **Am I ready to vote?** checklist.
 6. **Booth Map** — search address; marker on map (verify booth officially on ECI).
 7. **Assistant** — ELI5 toggle; chat uses profile context and **cached** repeated queries.
+
+
+## 8. Testing
+
+- Automated API testing using Pytest
+- Covers:
+  - Health & timeline endpoints
+  - Input validation
+  - Edge cases (empty, large input)
+  - Error handling (invalid routes, methods)
+
+Run tests:
+pytest
+
+
+## 9. Deployment
+
+- Backend deployed using **Google Cloud Run**
+- Frontend hosted separately (Vercel)
+- Environment variables used for secure API key management
+
+Example:
+https://votewise-backend-786371040951.asia-south1.run.app
+
+
+## 10. Screenshots
+
+### Home Page
+![Home](assets/home.png)
+
+### Chat Assistant
+![Chat](assets/chat.png)
+
+### Simulation
+![Simulation](assets/simulation.png)
+
+### Timeline
+![Timeline](assets/timeline.png)
+
+
+
+## 11. Real-World Impact
+
+VoteWise AI helps:
+- First-time voters understand the election process clearly
+- Reduce confusion and misinformation
+- Provide step-by-step guidance for voting readiness
+- Improve civic participation through AI-driven education
+
+This solution can be scaled for:
+- Government awareness platforms
+- Educational institutions
+- Public digital literacy initiatives
+
+
+## 12. Future Scope
+
+- Integration with official Election Commission APIs
+- Personalized voter reminders and notifications
+- Voice-based assistant for accessibility
+- Mobile app deployment
+- Advanced analytics on user engagement
 
 ---
 
