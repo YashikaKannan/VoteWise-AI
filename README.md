@@ -143,9 +143,13 @@ A sample `backend/Dockerfile` runs Uvicorn on port **8080**. Deploy with your se
 - Automated API testing using Pytest
 - Covers:
   - Health & timeline endpoints
-  - Input validation
   - Edge cases (empty, large input)
   - Error handling (invalid routes, methods)
+  - Unit tests for decision engine logic
+  - API tests using FastAPI TestClient
+  - Edge case and boundary condition validation
+  - Input validation and error handling (422 cases)
+  - Branch coverage across multiple user scenarios
 
 Run tests:
 pytest
