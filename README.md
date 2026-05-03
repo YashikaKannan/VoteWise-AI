@@ -3,6 +3,7 @@
 ## Live Demo
 https://votewise-ai-pro.vercel.app
 
+
 ## 1. Problem Statement
 
 Voting in India involves registration, roll verification, polling-booth logistics, and understanding EVM/VVPAT procedures. First-time voters, NRIs, and people who have moved cities often face fragmented information and anxiety on polling day. A plain chatbot dumps facts without structure; users need **guided flow**, **personalized rules**, and **safe practice** before they vote.
@@ -25,6 +26,14 @@ VoteWise AI is a **full-stack guided election learning assistant**:
 | **Simulation Mode** | Scenario graph (`polling_day`) with branching feedback and score; not free-form chat. |
 | **Decision Intelligence** | Deterministic rules (`age < 18`, NRI, moved city) merged with AI explanations in profile + chat. |
 | **Premium UI** | React + Tailwind + shadcn-style primitives + **framer-motion**; full-screen **PulseBeams** hero and CTA **Start Your Voting Journey**. |
+
+
+## Code Structure
+
+- Modular architecture (routes, services, models)
+- Separation of concerns (API, business logic, integrations)
+- Scalable design for adding new features
+
 
 ## 4. Architecture
 
