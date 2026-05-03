@@ -43,7 +43,7 @@ export function LandingPage() {
         >
           VoteWise AI
           <span className="mt-2 block bg-gradient-to-r from-cyan-300 via-sky-400 to-violet-400 bg-clip-text text-transparent">
-            Learn. Prepare. Vote with confidence.
+            Learn, Prepare, Vote with confidence.
           </span>
         </motion.h1>
         <motion.p
@@ -53,7 +53,7 @@ export function LandingPage() {
           transition={{ delay: 0.25, duration: 0.6 }}
         >
           A guided journey, decision intelligence, interactive simulations, and a context-aware assistant
-          — built for first-time voters, NRIs, and anyone navigating India&apos;s electoral process.
+          built for first-time voters, NRIs, and anyone navigating India&apos;s electoral process.
         </motion.p>
         <motion.div
           className="mt-10 flex flex-col items-center gap-4 sm:flex-row"
