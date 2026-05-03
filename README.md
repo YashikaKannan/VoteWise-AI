@@ -203,6 +203,8 @@ This solution can be scaled for:
 - Mobile app deployment
 - Advanced analytics on user engagement
 
+## 13. Known Issues
+- Minor CORS issue in production UI (backend fully functional via API)
 ---
 
 **Disclaimer:** VoteWise AI provides **educational** information only. Always confirm dates, forms, and polling-station details on the **Election Commission of India** and your state CEO portals.
